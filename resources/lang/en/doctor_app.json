@@ -229,6 +229,7 @@
     "total_clinics": "Clinics Teams",
     "total_doctors": "Total Doctors",
     "total_earning": "Total Earnings",
+    "doctor_earning": "Doctors Earnings",
     "Paid": "Paid",
     "monday": "Monday",
     "tuesday": "Tuesday",
@@ -338,5 +339,7 @@
     "Choose patient": "Choose patient",
     "Morning": "Morning",
     "Afternoon":"Afternoon",
-    "Night":"Night"
+    "Night":"Night",
+    "These are patients booked appointments with your doctors": "These, are patients booked appointments with your doctors",
+    "Patients": "Patients"
 }

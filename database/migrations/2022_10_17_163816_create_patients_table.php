@@ -25,6 +25,8 @@ class CreatePatientsTable extends Migration
             $table->string('gender', 127);
             $table->string('weight', 127);
             $table->string('height', 127);
+            $table->longText('medical_history')->nullable();
+            $table->longText('notes')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });

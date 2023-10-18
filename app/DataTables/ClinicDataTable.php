@@ -83,7 +83,7 @@ class ClinicDataTable extends DataTable
 
             ],
             [
-                'data' => 'user',
+                'data' => 'users',
                 'title' => trans('lang.clinic_users'),
                 'searchable' => false,
             ],

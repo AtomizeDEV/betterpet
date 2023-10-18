@@ -33,6 +33,9 @@ use Spatie\MediaLibrary\Models\Media;
  * @property string gender
  * @property string weight
  * @property string height
+ * @property string medical_history
+ * @property string notes
+ *
  */
 class Patient extends Model implements HasMedia, Castable
 {
@@ -54,7 +57,9 @@ class Patient extends Model implements HasMedia, Castable
         'age',
         'gender',
         'weight',
-        'height'
+        'height',
+        'medical_history',
+        'notes'
     ];
 
     /**
@@ -74,7 +79,9 @@ class Patient extends Model implements HasMedia, Castable
         'age' => 'string',
         'gender' => 'string',
         'weight' => 'string',
-        'height' => 'string'
+        'height' => 'string',
+        'medical_history' => 'string',
+        'notes' => 'string'
     ];
 
     /**

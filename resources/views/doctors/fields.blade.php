@@ -87,6 +87,22 @@
         </div>
     </div>
     @endhasrole
+
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row ">
+        {!! Form::label('session_duration', trans("lang.doctor_session_duration"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            <div class="input-group">
+                {!! Form::text('session_duration', null, ['class' => 'form-control','step'=>'any', 'min'=>'0','max'=>'100', 'placeholder'=> trans("lang.doctor_session_duration_placeholder")]) !!}
+                <div class="input-group-append">
+                    <div class="input-group-text text-bold px-3">Min</div>
+                </div>
+            </div>
+            <div class="form-text text-muted">
+                {{ trans("lang.doctor_session_duration_help") }}
+            </div>
+        </div>
+    </div>
+
 </div>
 <div class="d-flex flex-column col-sm-12 col-md-4 px-4">
 

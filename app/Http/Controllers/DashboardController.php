@@ -93,7 +93,7 @@ class DashboardController extends Controller
         $membersCount = $this->userRepository->count();
         $clinicCount = $this->clinicRepository->count();
         $clinics = $this->clinicRepository->orderBy('id', 'desc')->limit(4);
-        $patients = $this->patientRepository->orderBy('id', 'desc')->limit(10);
+        $patients = $this->patientRepository->orderBy('id', 'desc')->limit(5);
         $earning = $this->earningRepository->all()->sum('total_earning');
 
 

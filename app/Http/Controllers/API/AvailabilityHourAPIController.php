@@ -19,6 +19,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
@@ -76,16 +77,19 @@ class AvailabilityHourAPIController extends Controller
     {
         try {
             $this->doctorRepository->pushCriteria(new RequestCriteria($request));
+            $this->availabilityHourRepository->pushCriteria(new AvailabilityHoursOfUserCriteria($id));
             $this->doctorRepository->pushCriteria(new LimitOffsetCriteria($request));
         } catch (RepositoryException $e) {
             return $this->sendError($e->getMessage());
         }
         $doctor = $this->doctorRepository->findWithoutFail($id);
+
         if (empty($doctor)) {
             return $this->sendError('Doctor not found');
         }
         $calendar = [];
         $date = $request->input('date');
+
         if (!empty($date)) {
             $date = Carbon::createFromFormat('Y-m-d', $date);
             $calendar = $doctor->weekCalendar($date);

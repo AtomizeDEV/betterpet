@@ -258,7 +258,7 @@
                                     </td>
                                     <td>{!! $clinic->name !!}</td>
                                     <td>
-                                        {!! $clinic->address->address !!}
+                                        {!! $clinic->address->address ?? '' !!}
                                     </td>
                                     <td class="text-center">
                                         <a href="{!! route('clinics.edit',$clinic->id) !!}" class="text-muted"> <i class="fas fa-edit"></i> </a>

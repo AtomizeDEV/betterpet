@@ -166,8 +166,10 @@ class DoctorAPIController extends Controller
             if (isset($input['image']) && $input['image'] && is_array($input['image'])) {
                 foreach ($input['image'] as $fileUuid) {
                     $cacheUpload = $this->uploadRepository->getByUuid($fileUuid);
-                    $mediaItem = $cacheUpload->getMedia('image')->first();
-                    $mediaItem->copy($doctor, 'image');
+                    if ($cacheUpload) {
+                        $mediaItem = $cacheUpload->getMedia('image')->first();
+                        $mediaItem->copy($doctor, 'image');
+                    }
                 }
             }
         } catch (Exception $e) {
@@ -198,13 +200,13 @@ class DoctorAPIController extends Controller
             $input['specialities'] = isset($input['specialities']) ? $input['specialities'] : [];
             $doctor = $this->doctorRepository->update($input, $id);
             if (isset($input['image']) && $input['image'] && is_array($input['image'])) {
-//                if ($doctor->hasMedia('image')) {
-//                    $doctor->getMedia('image')->each->delete();
-//                }
                 foreach ($input['image'] as $fileUuid) {
                     $cacheUpload = $this->uploadRepository->getByUuid($fileUuid);
-                    $mediaItem = $cacheUpload->getMedia('image')->first();
-                    $mediaItem->copy($doctor, 'image');
+                    if ($cacheUpload) {
+                        $mediaItem = $cacheUpload->getMedia('image')->first();
+                        $mediaItem->copy($doctor, 'image');
+                    }
+
                 }
             }
         } catch (Exception $e) {

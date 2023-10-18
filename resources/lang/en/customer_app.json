@@ -140,6 +140,7 @@
     "Password": "Password",
     "Passwords do not match": "Passwords do not match",
     "PayPal Payment": "PayPal Payment",
+    "Stripe Payment": "Stripe Payment",
     "PayStack Payment": "PayStack Payment",
     "Payment Confirmation": "Payment Confirmation",
     "Payment Method": "Payment Method",
@@ -302,6 +303,11 @@
     "Choose patient": "Choose patient",
     "Morning": "Morning",
     "Afternoon":"Afternoon",
-    "Night":"Night"
+    "Night":"Night",
+    "These are patients assigned to you": "These are patients assigned to you",
+    "Your notes": "Your notes",
+    "Notes": "Notes",
+    "Your medical history": "Your medical history",
+    "Medical history": "Medical history",
 
 }

@@ -163,9 +163,9 @@ class PaymentAPIController extends Controller
         try {
             $this->paymentRepository->update($input, $id);
             $payment = $this->paymentRepository->with(['paymentMethod', 'paymentStatus'])->find($id);
-            Notification::send($payment->appointment->user, new StatusChangedPayment($payment->appointment));
+            Notification::send([$payment->appointment->user], new StatusChangedPayment($payment->appointment));
 
-            event(new AppointmentChangedEvent($payment->appointment->doctor));
+            event(new AppointmentChangedEvent($payment->appointment));
         } catch (ValidatorException $e) {
             return $this->sendError($e->getMessage());
         }

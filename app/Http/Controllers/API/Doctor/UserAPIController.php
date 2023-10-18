@@ -28,11 +28,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 
 class UserAPIController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
     private $userRepository;
-
     private $uploadRepository;
     private $roleRepository;
     private $customFieldRepository;

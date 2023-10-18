@@ -44,7 +44,7 @@ class ClinicAPIController extends Controller
     {
         try {
             $this->clinicRepository->pushCriteria(new RequestCriteria($request));
-            $this->clinicRepository->pushCriteria(new ClinicsOfUserCriteria(auth()->id()));
+            //$this->clinicRepository->pushCriteria(new ClinicsOfUserCriteria(auth()->id()));
             $this->clinicRepository->pushCriteria(new LimitOffsetCriteria($request));
             $clinics = $this->clinicRepository->all();
             $this->filterCollection($request, $clinics);
@@ -52,7 +52,7 @@ class ClinicAPIController extends Controller
             return $this->sendError($e->getMessage());
         }
 
-        return $this->sendResponse($clinics->toArray(), 'E Providers retrieved successfully');
+        return $this->sendResponse($clinics->toArray(), 'Clinics retrieved successfully');
     }
 
     /**

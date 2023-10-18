@@ -168,76 +168,89 @@
     </div>
   </div>
 </div>
+    <!-- Mobile Number Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row">
+        {!! Form::label('mobile_number', trans("lang.patient_mobile_number"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            {!! Form::text('mobile_number', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_mobile_number_placeholder")]) !!}
+            <div class="form-text text-muted">
+                {{ trans("lang.patient_mobile_number_help") }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Age Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row">
+        {!! Form::label('age', trans("lang.patient_age"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            {!! Form::text('age', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_age_placeholder")]) !!}
+            <div class="form-text text-muted">
+                {{ trans("lang.patient_age_help") }}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Gender Field -->
+
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row">
+        {!! Form::label('gender', trans("lang.patient_gender"),['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            {!! Form::select('gender', ['male' => trans('lang.patient_male'),'fixed' => trans('lang.patient_female')], null, ['class' => 'select2 form-control']) !!}
+            <div class="form-text text-muted">{{ trans("lang.patient_gender_help") }}</div>
+        </div>
+    </div>
 
 </div>
 <div class="d-flex flex-column col-sm-12 col-md-6">
 
-<!-- Mobile Number Field -->
-<div class="form-group align-items-baseline d-flex flex-column flex-md-row">
-  {!! Form::label('mobile_number', trans("lang.patient_mobile_number"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
-  <div class="col-md-9">
-    {!! Form::text('mobile_number', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_mobile_number_placeholder")]) !!}
-    <div class="form-text text-muted">
-      {{ trans("lang.patient_mobile_number_help") }}
+
+    <!-- Weight Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row">
+      {!! Form::label('weight', trans("lang.patient_weight"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+      <div class="col-md-9">
+        {!! Form::text('weight', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_weight_placeholder")]) !!}
+        <div class="form-text text-muted">
+          {{ trans("lang.patient_weight_help") }}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
-<!-- Age Field -->
-<div class="form-group align-items-baseline d-flex flex-column flex-md-row">
-  {!! Form::label('age', trans("lang.patient_age"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
-  <div class="col-md-9">
-    {!! Form::text('age', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_age_placeholder")]) !!}
-    <div class="form-text text-muted">
-      {{ trans("lang.patient_age_help") }}
+    <!-- Height Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row">
+      {!! Form::label('height', trans("lang.patient_height"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+      <div class="col-md-9">
+        {!! Form::text('height', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_height_placeholder")]) !!}
+        <div class="form-text text-muted">
+          {{ trans("lang.patient_height_help") }}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-
-<!-- Gender Field -->
-{{--<div class="form-group align-items-baseline d-flex flex-column flex-md-row">--}}
-{{--  {!! Form::label('gender', trans("lang.patient_gender"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}--}}
-{{--  <div class="col-md-9">--}}
-{{--    {!! Form::text('gender', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_gender_placeholder")]) !!}--}}
-{{--    <div class="form-text text-muted">--}}
-{{--      {{ trans("lang.patient_gender_help") }}--}}
-{{--    </div>--}}
-{{--  </div>--}}
-{{--</div>--}}
-
-<div class="form-group align-items-baseline d-flex flex-column flex-md-row">
-    {!! Form::label('gender', trans("lang.patient_gender"),['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
-    <div class="col-md-9">
-        {!! Form::select('gender', ['male' => trans('lang.patient_male'),'fixed' => trans('lang.patient_female')], null, ['class' => 'select2 form-control']) !!}
-        <div class="form-text text-muted">{{ trans("lang.patient_gender_help") }}</div>
+    <!-- Medical Historic Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row ">
+        {!! Form::label('medical_history', trans("lang.patient_medical_history"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            {!! Form::textarea('medical_history', null, ['class' => 'form-control','placeholder'=>
+             trans("lang.patient_medical_history_placeholder")  ]) !!}
+            <div class="form-text text-muted">{{ trans("lang.patient_medical_history_help") }}</div>
+        </div>
     </div>
-</div>
-<!-- Weight Field -->
-<div class="form-group align-items-baseline d-flex flex-column flex-md-row">
-  {!! Form::label('weight', trans("lang.patient_weight"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
-  <div class="col-md-9">
-    {!! Form::text('weight', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_weight_placeholder")]) !!}
-    <div class="form-text text-muted">
-      {{ trans("lang.patient_weight_help") }}
+
+
+    <!-- Notes Field -->
+    <div class="form-group align-items-baseline d-flex flex-column flex-md-row ">
+        {!! Form::label('notes', trans("lang.patient_notes"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+        <div class="col-md-9">
+            {!! Form::textarea('notes', null, ['class' => 'form-control','placeholder'=>
+             trans("lang.patient_notes_placeholder")  ]) !!}
+            <div class="form-text text-muted">{{ trans("lang.patient_notes_help") }}</div>
+        </div>
     </div>
-  </div>
-</div>
-
-
-<!-- Height Field -->
-<div class="form-group align-items-baseline d-flex flex-column flex-md-row">
-  {!! Form::label('height', trans("lang.patient_height"), ['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
-  <div class="col-md-9">
-    {!! Form::text('height', null,  ['class' => 'form-control','placeholder'=>  trans("lang.patient_height_placeholder")]) !!}
-    <div class="form-text text-muted">
-      {{ trans("lang.patient_height_help") }}
-    </div>
-  </div>
-</div>
 
 </div>
+
 @if($customFields)
 <div class="clearfix"></div>
 <div class="col-12 custom-field-container">
