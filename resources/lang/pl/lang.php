@@ -63,7 +63,7 @@ return [
     'app_setting_default_tax_help' => 'Insert Default Tax Ex: 20 for (20%)',
     'app_setting_default_tax_placeholder' => '20',
     'app_setting_en' => 'English',
-    'app_setting_pl' => 'Polish',
+    'app_setting_pl' => 'Polski',
     'app_setting_ar' => 'عربي',
     'app_setting_enable_facebook' => 'Enable facebook',
     'app_setting_enable_facebook_help' => 'Check it to use facebook as login method',

@@ -63,6 +63,7 @@ return [
     'app_setting_default_tax_help' => 'Insertar impuesto por defecto Ex: 20 para (20%)',
     'app_setting_default_tax_placeholder' => '20',
     'app_setting_en' => 'inglés',
+    'app_setting_pl' => 'Polaco',
     'app_setting_ar' => 'عربي',
     'app_setting_enable_facebook' => 'habilitar facebook',
     'app_setting_enable_facebook_help' => 'Compruébalo para usar Facebook como método de inicio de sesión',

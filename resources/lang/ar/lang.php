@@ -63,6 +63,7 @@ return [
     'app_setting_default_tax_help' => 'أدخل الضريبة الافتراضية: 20 لـ (20٪)',
     'app_setting_default_tax_placeholder' => '20',
     'app_setting_en' => 'إنجليزي',
+    'app_setting_pl' => 'تلميع',
     'app_setting_ar' => 'عربي',
     'app_setting_enable_facebook' => 'تمكين الفيسبوك',
     'app_setting_enable_facebook_help' => 'تحقق منه لاستخدام الفيسبوك كطريقة تسجيل الدخول',

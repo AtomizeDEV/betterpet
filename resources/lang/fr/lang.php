@@ -63,6 +63,7 @@ return [
     'app_setting_default_tax_help' => 'Insérer la taxe par défaut Ex : 20 pour (20 %)',
     'app_setting_default_tax_placeholder' => '20',
     'app_setting_en' => 'Anglais',
+    'app_setting_pl' => 'Polonais',
     'app_setting_ar' => 'عربي',
     'app_setting_enable_facebook' => 'Activer Facebook',
     'app_setting_enable_facebook_help' => 'Cochez-le pour utiliser Facebook comme méthode de connexion',

@@ -63,6 +63,7 @@ return [
     'app_setting_default_tax_help' => 'Inserir imposto padrão Ex: 20 para (20%)',
     'app_setting_default_tax_placeholder' => '20',
     'app_setting_en' => 'Inglês',
+    'app_setting_pl' => 'Polonês',
     'app_setting_ar' => 'عربي',
     'app_setting_enable_facebook' => 'habilitar facebook',
     'app_setting_enable_facebook_help' => 'Marque para usar o facebook como método de login',
