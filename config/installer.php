@@ -21,7 +21,7 @@ return [
     |
     */
     'demo_app' => env('DEMO_APP', false),
-    'currentVersion' => 'v200',
+    'currentVersion' => 'v220',
 
     'core' => [
         'minPhpVersion' => '7.3'

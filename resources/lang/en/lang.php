@@ -1482,4 +1482,11 @@ return [
     'doctor_patients_patient_id' => 'Patient Id',
     'doctor_patients_patient_id_help' => 'Insert Patient Id',
     'doctor_patients_patient_id_placeholder' => 'Insert Patient Id',
+
+    // If you made changes to your translation file you can just copy these 4 new lines to your file
+
+    'enable_payment_before_appointment_is_completed' => 'Enable Payment Before Appointment Is Completed',
+    'enable_payment_before_appointment_is_completed_help' => 'Enable Payment Before Appointment Is Completed',
+    'enable_payment_before_appointment_is_completed_placeholder' => 'Enable Payment Before Appointment Is Completed',
+    'app_setting_payment_before_appointment_is_completed' => 'Payment Before Appointment Is Completed',
 ];

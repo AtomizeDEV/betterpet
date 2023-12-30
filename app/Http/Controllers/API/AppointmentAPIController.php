@@ -184,7 +184,7 @@ class AppointmentAPIController extends Controller
         if (empty($appointment)) {
             return $this->sendError('Appointment not found');
         }
-        $this->filterModel($request, $appointment);
+        //$this->filterModel($request, $appointment);
         return $this->sendResponse($appointment->toArray(), 'Appointment retrieved successfully');
 
 
@@ -259,18 +259,18 @@ class AppointmentAPIController extends Controller
                 $input['appointment_status_id'] = 7;
             }
             $appointment = $this->appointmentRepository->update($input, $id);
-            if (isset($input['payment_status_id'])) {
-                $this->paymentRepository->update(
-                    ['payment_status_id' => $input['payment_status_id']],
-                    $appointment->payment_id
-                );
-                event(new AppointmentChangedEvent($appointment->doctor));
-            }
+//            if (isset($input['payment_status_id'])) {
+//                $this->paymentRepository->update(
+//                    ['payment_status_id' => $input['payment_status_id']],
+//                    $appointment->payment_id
+//                );
+//                event(new AppointmentChangedEvent($appointment));
+//            }
             if (isset($input['appointment_status_id']) && $input['appointment_status_id'] != $oldAppointment->appointment_status_id) {
                 if ($appointment->appointmentStatus->order < 40) {
                     Notification::send([$appointment->user], new StatusChangedAppointment($appointment));
                 } else {
-                    Notification::send($appointment->doctor->user, new StatusChangedAppointment($appointment));
+                    Notification::send([$appointment->doctor->user], new StatusChangedAppointment($appointment));
                 }
             }
 

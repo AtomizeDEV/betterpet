@@ -28,11 +28,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 
 class UserAPIController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
     private $userRepository;
-
     private $uploadRepository;
     private $roleRepository;
     private $customFieldRepository;
@@ -164,7 +160,8 @@ class UserAPIController extends Controller
                 'distance_unit' => '',
                 'default_theme' => '',
                 'default_country_code' => '',
-                'enable_otp' => ''
+                'enable_otp' => '',
+                'enable_payment_before_appointment_is_completed' => '',
             ]
         );
 

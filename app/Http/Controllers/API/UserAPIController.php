@@ -164,7 +164,8 @@ class UserAPIController extends Controller
                 'default_theme' => '',
                 'app_short_description' => '',
                 'default_country_code' => '',
-                'enable_otp' => ''
+                'enable_otp' => '',
+                'enable_payment_before_appointment_is_completed' => '',
             ]
         );
         if (!$settings) {

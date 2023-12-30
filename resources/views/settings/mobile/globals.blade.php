@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <!-- Theme Color Field -->
+                <!-- Distance Unit Field -->
                 <div class="form-group row col-6">
                     {!! Form::label('distance_unit', trans("lang.app_setting_distance_unit"),['class' => 'col-4 control-label text-right']) !!}
                     <div class="col-8">
@@ -74,8 +74,23 @@
                     </div>
                 </div>
 
-                <h5 class="col-12 pb-4 custom-field-container"><i class="mr-3 fas fa-mobile-phone"></i>{!! trans('lang.app_setting_version') !!}</h5>
+                <h5 class="col-12 pb-4 custom-field-container"><i class="mr-3 fas fa-money-bill-wave"></i>{!! trans('lang.app_setting_payment_before_appointment_is_completed') !!}</h5>
 
+                <!-- Payment Before/After Field -->
+
+                <div class="form-group row col-8">
+                    <div class="col-1"></div>
+                    {!! Form::label('enable_payment_before_appointment_is_completed', trans("lang.enable_payment_before_appointment_is_completed"),['class' => 'col-6 control-label']) !!}
+                    {!! Form::hidden('enable_payment_before_appointment_is_completed', 0, ['id'=>"hidden_enable_payment_before_appointment_is_completed"]) !!}
+                    <div class="row icheck-{{setting('theme_color')}}">
+                        {!! Form::checkbox('enable_payment_before_appointment_is_completed', 1, setting('enable_payment_before_appointment_is_completed',false)) !!} <label for="enable_payment_before_appointment_is_completed"></label>
+                    </div>
+
+
+                </div>
+
+
+                <h5 class="col-12 pb-4 custom-field-container"><i class="mr-3 fas fa-mobile-phone"></i>{!! trans('lang.app_setting_version') !!}</h5>
                 <!-- app_version Field -->
                 <div class="form-group row col-6">
                     {!! Form::label('app_version', trans('lang.app_setting_app_version'), ['class' => 'col-4 control-label text-right']) !!}
@@ -88,9 +103,9 @@
                 </div>
                 <!-- 'Boolean Enabled Field' -->
                 <div class="form-group row col-6">
-                    {!! Form::label('enable_version', trans("lang.app_setting_enable_version"),['class' => 'col-md-3 control-label text-md-right mx-1']) !!}
+                    {!! Form::label('enable_version', trans("lang.app_setting_enable_version"),['class' => 'col-4 control-label text-right']) !!}
                     {!! Form::hidden('enable_version', 0, ['id'=>"hidden_enable_version"]) !!}
-                    <div class="col-9 icheck-{{setting('theme_color')}}">
+                    <div class="row col-6 icheck-{{setting('theme_color')}}">
                         {!! Form::checkbox('enable_version', 1, setting('enable_version', true)) !!}
                         <label for="enable_version"></label>
                     </div>

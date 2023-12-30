@@ -409,6 +409,11 @@ class AppSettingsTableSeeder extends Seeder
                 'key' => 'clinic_app_name',
                 'value' => 'Clinic Management',
             ),
+            array(
+                'id' => 151,
+                'key' => 'enable_payment_before_appointment_is_completed',
+                'value' => '0',
+            )
         ));
 
 
