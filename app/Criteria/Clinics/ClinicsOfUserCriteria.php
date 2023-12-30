@@ -47,15 +47,12 @@ class ClinicsOfUserCriteria implements CriteriaInterface
             return $model;
         } else if (auth()->user()->hasRole('clinic_owner')) {
             return $model->join('clinic_users', 'clinic_users.clinic_id', '=', 'clinics.id')
-                ->groupBy('clinics.id')
-                ->where('clinic_users.user_id', $this->userId)
-                ->select('clinics.*');
+                ->select('clinics.*')
+                ->where('clinic_users.user_id', $this->userId);
         } else if (auth()->user()->hasRole('doctor')) {
             return $model->join('doctors', 'doctors.clinic_id', '=', 'clinics.id')
-                ->groupBy('clinics.id')
-                ->where('doctors.user_id', $this->userId)
-                ->select('clinics.*');
-
+                ->select('clinics.*')
+                ->where('doctors.user_id', $this->userId);
         }
         else {
             return $model;

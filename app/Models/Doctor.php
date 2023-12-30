@@ -50,8 +50,6 @@ use Spatie\OpeningHours\OpeningHours;
  * @property boolean enable_at_customer_address
  * @property boolean enable_online_consultation
  * @property boolean available
- * @property double commission
- * @property string session_duration
  * @property integer clinic_id
  * @property integer user_id
  */
@@ -74,7 +72,7 @@ class Doctor extends Model implements HasMedia, Castable
         'discount_price' => 'nullable|numeric|min:0|max:99999999,99',
         'description' => 'required',
         'clinic_id' => 'required|exists:clinics,id',
-        'user_id' => 'exists:users,id'
+        //'user_id' => 'required|exists:users,id'
     ];
     public $translatable = [
         'name',
@@ -84,7 +82,6 @@ class Doctor extends Model implements HasMedia, Castable
     public $fillable = [
         'name',
         'price',
-        'commission',
         'discount_price',
         'description',
         'featured',
@@ -93,7 +90,6 @@ class Doctor extends Model implements HasMedia, Castable
         'enable_at_customer_address',
         'enable_online_consultation',
         'available',
-        'session_duration',
         'clinic_id',
         'user_id'
     ];
@@ -107,7 +103,6 @@ class Doctor extends Model implements HasMedia, Castable
         'name' => 'string',
         'price' => 'double',
         'discount_price' => 'double',
-        'commission' => 'double',
         'description' => 'string',
         'featured' => 'boolean',
         'enable_appointment' => 'boolean',
@@ -115,7 +110,6 @@ class Doctor extends Model implements HasMedia, Castable
         'enable_at_customer_address' => 'boolean',
         'enable_online_consultation' => 'boolean',
         'available' => 'boolean',
-        'session_duration' => 'string',
         'clinic_id' => 'integer',
         'user_id' => 'integer',
         'rate' => 'double',
@@ -268,11 +262,11 @@ class Doctor extends Model implements HasMedia, Castable
     }
 
     /**
-     * get each session_duration min with available/notAvailable doctor
+     * get each 15 min with open/close clinic
      */
     public function weekCalendar(Carbon $date): array
     {
-        $period = CarbonPeriod::since($date->subDay()->ceilDay())->minutes((int)$this->session_duration)->until($date->addDay()->ceilDay()->subMinutes((int)$this->session_duration));
+        $period = CarbonPeriod::since($date->subDay()->ceilDay())->minutes(15)->until($date->addDay()->ceilDay()->subMinutes(15));
         $dates = [];
         // Iterate over the period
         foreach ($period as $key => $d) {

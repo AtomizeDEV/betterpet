@@ -56,7 +56,7 @@ abstract class ParentAppointmentController extends Controller
             $payment = $this->createPayment();
             if ($payment != null) {
                 $this->appointmentRepository->update(['payment_id' => $payment->id], $this->appointment->id);
-                event(new AppointmentChangedEvent($this->appointment));
+                event(new AppointmentChangedEvent($this->appointment->doctor));
                 $this->sendNotificationToDoctors();
                 $this->sendNotificationToClinicsOwners();
             }
@@ -88,7 +88,7 @@ abstract class ParentAppointmentController extends Controller
 
     protected function sendNotificationToDoctors()
     {
-        Notification::send([$this->appointment->doctor->user], new NewAppointment($this->appointment));
+        Notification::send($this->appointment->doctor->user, new NewAppointment($this->appointment));
     }
     protected function sendNotificationToClinicsOwners()
     {

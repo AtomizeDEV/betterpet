@@ -57,12 +57,9 @@ class TranslationAPIController extends Controller
             $this->validate($request, [
                 'locale' => 'required|string:10',
             ]);
-            if (($request->segment(2) == 'clinic_owner')) {
-                $file = "clinic_owner_app.json";
-            }else if (($request->segment(2) == 'doctor')) {
-                $file = "doctor_app.json";
-            }
-            else {
+            if (($request->segment(2) == 'clinic')) {
+                $file = "clinic_app.json";
+            } else {
                 $file = "customer_app.json";
             }
             $locale = $request->get('locale', 'en');

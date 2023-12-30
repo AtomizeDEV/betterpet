@@ -34,7 +34,6 @@ class CreateDoctorsTable extends Migration
             $table->boolean('enable_online_consultation')->nullable()->default(0);
             $table->boolean('available')->nullable()->default(1);
             $table->double('commission', 5, 2)->default(0);
-            $table->string('session_duration')->default('30')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->integer('clinic_id')->unsigned();
             $table->timestamps();

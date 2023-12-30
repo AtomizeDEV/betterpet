@@ -21,7 +21,6 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
@@ -121,10 +120,8 @@ class ClinicAPIController extends Controller
             if (isset($input['image']) && $input['image'] && is_array($input['image'])) {
                 foreach ($input['image'] as $fileUuid) {
                     $cacheUpload = $this->uploadRepository->getByUuid($fileUuid);
-                    if ($cacheUpload != null) {
-                        $mediaItem = $cacheUpload->getMedia('image')->first();
-                        $mediaItem->copy($clinic, 'image');
-                    }
+                    $mediaItem = $cacheUpload->getMedia('image')->first();
+                    $mediaItem->copy($clinic, 'image');
                 }
             }
         } catch (Exception $e) {
@@ -152,17 +149,15 @@ class ClinicAPIController extends Controller
         }
         try {
             $input = $request->all();
-            $input['users'] = isset($input['users']) ? $input['users'] : [];
-            $input['taxes'] = isset($input['taxes']) ? $input['taxes'] : [];
-
             $clinic = $this->clinicRepository->update($input, $id);
             if (isset($input['image']) && $input['image'] && is_array($input['image'])) {
+//                if ($clinic->hasMedia('image')) {
+//                    $clinic->getMedia('image')->each->delete();
+//                }
                 foreach ($input['image'] as $fileUuid) {
                     $cacheUpload = $this->uploadRepository->getByUuid($fileUuid);
-                    if ($cacheUpload != null) {
-                        $mediaItem = $cacheUpload->getMedia('image')->first();
-                        $mediaItem->copy($clinic, 'image');
-                    }
+                    $mediaItem = $cacheUpload->getMedia('image')->first();
+                    $mediaItem->copy($clinic, 'image');
                 }
             }
         } catch (Exception $e) {

@@ -26,7 +26,5 @@ $factory->define(Patient::class, function (Faker $faker) {
         'gender' => $faker->randomElement(["Male","Female"]),
         'weight' => $faker->randomFloat(2,4,100),
         'height' => $faker->numberBetween(30,240),
-        'medical_history' => $faker->text,
-        'notes' => $faker->text,
     ];
 });
